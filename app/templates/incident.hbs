@@ -1,0 +1,6 @@
+<h1>{{model.name}}</h1>
+
+<p>{{input type="text" value=model.name placeholder="Name" class="form-control"}}</p>
+<p>{{textarea value=model.summary class="form-control"}}</p>
+
+<p><button {{action 'save'}}>Save</button></p>

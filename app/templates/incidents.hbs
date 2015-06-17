@@ -1,0 +1,29 @@
+<h3>Incidents</h3>
+
+<button {{action 'create'}}>Create</button>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |incident|}}
+    <tr>
+     <td>
+      {{#link-to 'incident' incident}}
+        {{incident.name}}
+      {{/link-to}}
+     </td>
+     <td>{{incident.location}}</td>
+     <td>{{incident.date}}</td>
+     <td>{{incident.summary}}</td>
+   </tr>
+   {{/each}}
+ </tbody>
+</table>
+{{outlet}}

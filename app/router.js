@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('incidents', function() {
+    this.resource('incident', { path: ':incident_id' });
+  });
 });
 
 export default Router;

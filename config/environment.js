@@ -43,5 +43,15 @@ module.exports = function(environment) {
 
   }
 
+  ENV.remote_couch = 'http://localhost:5984/play';
+  ENV.local_couch = 'local_play';
+  // if (environment === 'production') {
+  //   ENV.baseURL = '/bloggrcouch/';
+  //   ENV.remote_couch = 'http://martinic.iriscouch.com/bloggr';
+  // }
+  ENV.contentSecurityPolicy = {
+    'connect-src': "'self' " + ENV.remote_couch.substring(0, ENV.remote_couch.indexOf('/', 9))
+  };
+
   return ENV;
 };
